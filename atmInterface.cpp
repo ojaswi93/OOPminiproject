@@ -15,7 +15,7 @@ private:
     int balance;
     int deposit;
     int withdrawal;
-    
+
 public:
     string customer_name;
     void amount(); // assigning initial values
@@ -49,16 +49,19 @@ void customer ::withdraw()
 {
     cout << "Enter amount to be withdrawn: " << endl;
     cin >> withdrawal;
-    if (withdrawal > balance)
+    try
     {
-        cout << "Insufficient funds :(" << endl;
-    }
-    else
-    {
+        if (withdrawal > balance)
+            throw 1;
         balance = balance - withdrawal;
         cout << "Amount successfully withdrawn!" << endl;
         cout << "Balance: " << balance << endl;
     }
+    catch (int e)
+    {
+        cout << "Insufficient funds :(" << endl;
+    }
+
 }
 
 void customer ::amount()
