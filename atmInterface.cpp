@@ -51,8 +51,10 @@ void customer ::withdraw()
     cin >> withdrawal;
     try
     {
+        // if (withdrawal > 30000)
+        //   throw('a');
         if (withdrawal > balance)
-            throw 1;
+            throw(1);
         balance = balance - withdrawal;
         cout << "Amount successfully withdrawn!" << endl;
         cout << "Balance: " << balance << endl;
@@ -61,7 +63,10 @@ void customer ::withdraw()
     {
         cout << "Insufficient funds :(" << endl;
     }
-
+    // catch (char a)
+    //{
+    //   cout << "Withdraw limit for this account is Rs 30,000. Please enter amount less than Rs 30,000." << endl;
+    //}
 }
 
 void customer ::amount()
